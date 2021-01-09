@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  dbMySQL:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "l@anGAMessss_2020"
+      MYSQL_USER: "loanGames"
+      MYSQL_PASSWORD: "l@anGAMessss_2020"
+      MYSQL_DATABASE: "loanGames"
+    ports:
+      - "3306:3306"
+    command: --init-file /data/application/init.sql
+    volumes:
+        - ./database/script.sql:/data/application/init.sql
+    networks:
+      - mysql-network
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - mysql-network
+
+networks: 
+  mysql-network:
+    driver: bridge  

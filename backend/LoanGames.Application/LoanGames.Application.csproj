@@ -5,8 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\LoanGames.Domain\LoanGames.Domain.csproj" />
+    <ProjectReference Include="..\LoanGames.Service\LoanGames.Service.csproj" />
+    <ProjectReference Include="..\LoanGames.Infra.CrossCutting\LoanGames.Infra.CrossCutting.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" NoWarn="NU1605" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.1" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
